@@ -14,7 +14,7 @@ export class FixerioService {
   constructor(private http: Http) {  }
 
   getExchangeData(base): Promise<BaseCurrency> {
-    const baseUrl  = `http://api.fixer.io/latest?base=${base}`;
+    const baseUrl  = `https://api.fixer.io/latest?base=${base}`;
 
     return this.http.get(baseUrl).toPromise()
     .then(response => {
