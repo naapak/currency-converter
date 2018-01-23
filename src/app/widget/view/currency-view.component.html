@@ -1,0 +1,45 @@
+<div id="currency_converter">
+<h1>Currency Converter</h1>
+  <table id="converter_table" >
+    <tbody>
+    
+      <tr>
+        <td>
+          <ngl-form-element label="Type in amount and select currency:" class="slds-m-top--small marginRight">
+          <input nglFormControl id="base_input"  [(ngModel)]="currency1value" type="string" name="input"  (input)="inputChange($event)">
+        </ngl-form-element>
+        </td>
+        <td type="default" class="slds-m-top--small"></td>
+        <td>
+            <ngl-form-element label="" class="slds-m-top--small">
+            <select nglFormControl class="slds-select" id="base_list" [(ngModel)]="currency1"  name="Select currency1" (change)="flexerioData(currency1)">
+              <option *ngFor="let currency of currencies" [value] ="currency" > {{currency}} </option>
+            </select>
+          </ngl-form-element>
+        
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <ngl-form-element label="Converted Amount:" class="slds-m-top--small marginRight">
+          <input nglFormControl class="slds-select " id="target_output" [(ngModel)]="target_output" name="output" disabled>
+        </ngl-form-element>
+        </td>
+        <td></td>
+        <td>
+              <ngl-form-element label="" class="slds-m-top--small">
+            <select  nglFormControl class="" id="target_list"   [(ngModel)]="currency2" name="Select currency2" (change)="targetValue(currency2)">
+              <option *ngFor="let currency of currencies" [value] ="currency" > {{currency}} </option>
+            </select>
+          </ngl-form-element>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<ngl-badge type="error">{{offLine}}</ngl-badge>
+<div class="disclaimer_link">
+<a [routerLink]="['/disclaimer']">Disclaimer</a>
+</div>
+
+</div>
