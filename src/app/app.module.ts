@@ -7,11 +7,6 @@ import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {NglModule} from 'ng-lightning/ng-lightning';
 
 import { AppComponent } from './app.component';
-// import { BaseCurrency } from './widget/model/model.component';
-// import {Currency} from './widget/model/currency.component';
-// import {CurrencyViewComponent } from './widget/view/currency-view.component';
-// import {FixerioService } from './services/fixerio.service';
-
 import { AppRoutingModule } from './/app-routing.module';
 
 import {CurrencyViewModule} from './widget/view/currency-view.module';

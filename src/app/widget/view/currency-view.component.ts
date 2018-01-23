@@ -6,7 +6,7 @@ import {Currency} from '../model/currency.component';
 @Component({
   selector: 'app-currency-view',
   templateUrl: './currency-view.component.html',
-  styleUrls: ['./currency-view.component.css']
+  styleUrls: ['./currency-view.component.scss']
 })
 export class CurrencyViewComponent implements OnInit {
 
@@ -41,7 +41,8 @@ export class CurrencyViewComponent implements OnInit {
           console.log('error from view component', error);
           if (error.status === 0) {
             this.offLine = 'The internet connection appears to be offline.';
-
+          } else if (error.status === 500 || error.status === 502) {
+            this.offLine = 'Sorry the server is under maintenance, please come back later.';
           }
         });
 
